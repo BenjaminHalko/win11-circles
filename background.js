@@ -1,6 +1,6 @@
 // Variables
 
-const numCircles = 5;
+const numCircles = 8;
 
 const minHue = 190;
 const maxHue = 285;
