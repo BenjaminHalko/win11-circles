@@ -49,7 +49,7 @@
   "frameRate": {
     "text": "Frame Rate",
     "type": "slider",
-    "value": 15,
+    "value": 30,
     "min": 15,
     "max": 240,
     "step": 30

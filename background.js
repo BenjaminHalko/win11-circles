@@ -1,7 +1,7 @@
 // Variables
 var numCircles = 8;
 
-var frameRate = 15;
+var frameRate = 30;
 
 var minHue = 190;
 var maxHue = 285;
@@ -25,11 +25,13 @@ var circles = [];
 function createCircles() {
     circles = [];
     for (var i = 0; i < numCircles; i++) {
+        var colRand = Math.random();
         circles.push({
             x: Math.round(Math.random() * window.innerWidth),
             y: Math.round(Math.random() * window.innerHeight),
             r: i / numCircles,
-            color: minHue + Math.round(Math.random() * (maxHue - minHue)),
+            colorRand: colRand,
+            color: minHue + Math.round(colRand * (maxHue - minHue))
         });
     }
 }
@@ -47,7 +49,8 @@ const animate = function () {
             circles[i].r = 0;
             circles[i].x = Math.round(Math.random() * window.innerWidth);
             circles[i].y = Math.round(Math.random() * window.innerHeight);
-            circles[i].color = minHue + Math.round(Math.random() * (maxHue - minHue));
+            circles[i].colorRand = Math.random();
+            circles[i].color = minHue + Math.round(circles[i].colorRand * (maxHue - minHue));
         }
 
         ctx.fillStyle = ctx.createRadialGradient(circles[i].x, circles[i].y, 0, circles[i].x, circles[i].y, Math.round(startRadius + Math.sin(circles[i].r * Math.PI) * (endRadius - startRadius)));
@@ -60,8 +63,9 @@ const animate = function () {
 var interval = setInterval(animate, 1000 / frameRate);
 
 function recolor() {
+    if (minHue > maxHue) maxHue += 360;
     for (var i = 0; i < circles.length; i++) {
-        circles[i].color = minHue + Math.round(Math.random() * (maxHue - minHue));
+        circles[i].color = minHue + Math.round(circles[i].colorRand * (maxHue - minHue));
     }
 }
 
