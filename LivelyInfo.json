@@ -2,16 +2,9 @@
   "AppVersion": "1.0.0.0",
   "Title": "Windows 11 Glowing Circles",
   "Thumbnail": "preview.jpg",
-  "Preview": "w4af0t2c.gif",
   "Desc": "A recreation of the glowing circles from the Windows 11 user creation screen.",
   "Author": "Benjamin Halko",
-  "License": null,
   "Contact": "https://github.com/BenjaminHalko/win11-circles",
   "Type": 1,
-  "FileName": "index.html",
-  "Arguments": "",
-  "IsAbsolutePath": false,
-  "Id": null,
-  "Tags": null,
-  "Version": 0
+  "FileName": "index.html"
 }
