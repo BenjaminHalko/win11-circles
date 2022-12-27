@@ -6,14 +6,6 @@
     "min": 1,
     "max": 30
   },
-  "frameRate": {
-    "text": "Frame Rate",
-    "type": "slider",
-    "value": 15,
-    "min": 15,
-    "max": 240,
-    "step": 30
-  },
   "spd": {
     "text": "Speed",
     "type": "slider",
@@ -53,5 +45,13 @@
     "min": 0,
     "max": 1000,
     "step": 20
+  },
+  "frameRate": {
+    "text": "Frame Rate",
+    "type": "slider",
+    "value": 15,
+    "min": 15,
+    "max": 240,
+    "step": 30
   }
 }
