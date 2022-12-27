@@ -1,7 +1,7 @@
 // Variables
 var numCircles = 8;
 
-var frameRate = 60;
+var frameRate = 30;
 
 var minHue = 190;
 var maxHue = 285;

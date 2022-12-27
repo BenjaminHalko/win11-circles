@@ -9,10 +9,10 @@
   "frameRate": {
     "text": "Frame Rate",
     "type": "slider",
-    "value": 60,
-    "min": 0,
+    "value": 30,
+    "min": 15,
     "max": 240,
-    "step": 5
+    "step": 30
   },
   "spd": {
     "text": "Speed",
