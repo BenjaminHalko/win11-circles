@@ -63,9 +63,10 @@ const animate = function () {
 var interval = setInterval(animate, 1000 / frameRate);
 
 function recolor() {
-    if (minHue > maxHue) maxHue += 360;
+    var tempMaxHue = maxHue;
+    if (minHue > maxHue) tempMaxHue += 360;
     for (var i = 0; i < circles.length; i++) {
-        circles[i].color = minHue + Math.round(circles[i].colorRand * (maxHue - minHue));
+        circles[i].color = minHue + Math.round(circles[i].colorRand * (tempMaxHue - minHue));
     }
 }
 
