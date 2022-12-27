@@ -22,14 +22,19 @@ const ctx = canvas.getContext("2d");
 
 // Create the circles
 var circles = [];
-for (var i = 0; i < numCircles; i++) {
-    circles.push({
-        x: Math.round(Math.random() * window.innerWidth),
-        y: Math.round(Math.random() * window.innerHeight),
-        r: i / numCircles,
-        color: minHue + Math.round(Math.random() * (maxHue - minHue)),
-    });
+function createCircles() {
+    circles = [];
+    for (var i = 0; i < numCircles; i++) {
+        circles.push({
+            x: Math.round(Math.random() * window.innerWidth),
+            y: Math.round(Math.random() * window.innerHeight),
+            r: i / numCircles,
+            color: minHue + Math.round(Math.random() * (maxHue - minHue)),
+        });
+    }
 }
+
+createCircles();
 
 const animate = function () {
     canvas.width = window.innerWidth;
@@ -64,6 +69,7 @@ function livelyPropertyListener(name, val) {
     switch(name) {
         case "numCircles":
             numCircles = val;
+            createCircles();
             break;
         case "frameRate":
             frameRate = val;
