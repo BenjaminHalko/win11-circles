@@ -48,8 +48,11 @@ function animate(timeStamp) {
     canvas.height = window.innerHeight;
 
     // Calculate the elapsed time since the last frame
-    const elapsedTime = timeStamp - lastTime;
+    let elapsedTime = timeStamp - lastTime;
     lastTime = timeStamp;
+
+    // If the elapsed time is too large, reset it
+    if (elapsedTime > 500) elapsedTime = 1;
 
     // Clear the canvas
     ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
@@ -59,11 +62,11 @@ function animate(timeStamp) {
         circles[i].r += spd * (elapsedTime / 1000);
 
         if (circles[i].r >= 1) {
-        circles[i].r = circles[i].r % 1;
-        circles[i].x = Math.round(Math.random() * window.innerWidth);
-        circles[i].y = Math.round(Math.random() * window.innerHeight);
-        circles[i].colorRand = Math.random();
-        circles[i].color = minHue + Math.round(circles[i].colorRand * (maxHue - minHue));
+            circles[i].r = circles[i].r % 1;
+            circles[i].x = Math.round(Math.random() * window.innerWidth);
+            circles[i].y = Math.round(Math.random() * window.innerHeight);
+            circles[i].colorRand = Math.random();
+            circles[i].color = minHue + Math.round(circles[i].colorRand * (maxHue - minHue));
         }
 
         // Calculate the circle's radius
