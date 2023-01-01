@@ -45,13 +45,5 @@
     "min": 0,
     "max": 1000,
     "step": 20
-  },
-  "frameRate": {
-    "text": "Frame Rate",
-    "type": "slider",
-    "value": 30,
-    "min": 15,
-    "max": 240,
-    "step": 30
   }
 }
