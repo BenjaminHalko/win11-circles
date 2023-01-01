@@ -59,7 +59,7 @@ function animate(timeStamp) {
         circles[i].r += spd * (elapsedTime / 1000);
 
         if (circles[i].r >= 1) {
-        circles[i].r = 0;
+        circles[i].r = circles[i].r % 1;
         circles[i].x = Math.round(Math.random() * window.innerWidth);
         circles[i].y = Math.round(Math.random() * window.innerHeight);
         circles[i].colorRand = Math.random();
